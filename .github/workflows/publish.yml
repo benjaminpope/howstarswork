@@ -18,7 +18,7 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
 
       - name: Set up TeX
-        uses: quarto install tinytex
+        run: quarto install tinytex
 
       - name: Install Python and Dependencies
         uses: actions/setup-python@v4
