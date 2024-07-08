@@ -7,7 +7,7 @@ name: Quarto Publish
 
 jobs:
   build-deploy:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     permissions:
       contents: write
     steps:
@@ -18,7 +18,7 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
       
       - name: Set up XeLaTeX
-        run: sudo apt-get install texlive-xetex texlive-fonts-recommended texlive-plain-generic
+        run: brew install basictex
         
       - name: Install Python and Dependencies
         uses: actions/setup-python@v4
