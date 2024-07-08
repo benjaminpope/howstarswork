@@ -18,7 +18,7 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
       
       - name: Set up XeLaTeX
-        run: brew install basictex
+        run: quarto install tinytex
         
       - name: Install Python and Dependencies
         uses: actions/setup-python@v4
