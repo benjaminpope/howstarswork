@@ -2,7 +2,7 @@
 
 ## Benjamin Pope
 
-[![Build](https://github.com/benjaminpope/howstarswork/actions/workflows/main.yml/badge.svg)](https://github.com/benjaminpope/howstarswork/actions/workflows/main.yml)
+[![Quarto Publish](https://github.com/benjaminpope/howstarswork/actions/workflows/publish.yml/badge.svg)](https://github.com/benjaminpope/howstarswork/actions/workflows/publish.yml)
 
 We live around a star, the Sun. It is overwhelmingly the most important feature of our environment -- too bright to look at! -- and drives the dynamics of our climate, our economy, and our daily routine. We understand it in remarkable detail: we can measure its internal sounds and buoyancy waves as it rings like a bell, and using the science of helioseismology we can accurately reconstruct its physical properties almost all the way to the core. We can see its magnetised wind as the Southern Lights, and measure it quantitatively on satellites. We we can even measure neutrinos directly reaching us from the nuclear furnace at its core. 
 
