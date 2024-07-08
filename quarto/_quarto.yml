@@ -13,22 +13,16 @@ book:
   search: true
   repo-url: https://github.com/benjaminpope/howstarswork/
   repo-actions: [edit]
-  downloads: [pdf, epub]
+  downloads: [pdf]
   sharing: [twitter, facebook]
-  navbar:
-    tools:
-      - icon: twitter
-        href: https://twitter.com/fringetracker
-      - icon: bluesky
-        href: https://bsky.app/profile/fringetracker.bsky.social
 
 bibliography: references.bib
 
 format:
   html:
     theme: 
-      light: cosmo
       dark: [darkly]
+      light: cosmo
     grid:
       margin-width: 350px
   pdf:
