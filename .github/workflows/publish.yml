@@ -25,6 +25,9 @@ jobs:
             cleveref
             hyperref
       
+      - name: Set up XeLaTeX
+        run: sudo apt-get install texlive-xetex
+        
       - name: Set up TeX fonts
         run: tlmgr install fontspec
         
