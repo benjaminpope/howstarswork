@@ -19,9 +19,6 @@ jobs:
       
       - name: Set up XeLaTeX
         run: sudo apt-get install texlive-xetex texlive-fonts-recommended texlive-plain-generic
-
-      - name: Set up TeX fonts
-        run: tlmgr install fontspec
         
       - name: Install Python and Dependencies
         uses: actions/setup-python@v4
