@@ -33,7 +33,7 @@ format:
       margin-width: 350px
   pdf:
     documentclass: scrreprt
-    mainfont: Times
+    mainfont: Palatino
 
 reference-location: margin
 citation-location: margin
