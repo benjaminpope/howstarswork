@@ -65,7 +65,7 @@ $$
 M_\text{shell} a = a \rho A dr = - A dP  - \frac{G M_r M_\text{shell}}{r^2}
 $$
 
-and therefore rearranging, in equilibrium ($a = 0$) we have 
+and therefore rearranging, in equilibrium ($a = 0$) we have the __equation of hydrostatic equilibrium__:
 
 ::: column-margin
 *Tattoo this equation on the back of your eyelids.*
