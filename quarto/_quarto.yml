@@ -1,0 +1,31 @@
+project:
+  type: book
+
+book:
+  title: "How Stars Work"
+  author: "Benjamin Pope"
+  date: today
+  date-format: "D MMMM YYYY"
+  chapters:
+    - index.qmd
+    - hydrostatic-equilibrium.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: 
+      light: cosmo
+      dark: [darkly]
+    grid:
+      margin-width: 350px
+  pdf:
+    documentclass: scrreprt
+    mainfont: Times New Roman
+
+reference-location: margin
+citation-location: margin
+
+toc: true
+toc-title: Contents
