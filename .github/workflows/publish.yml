@@ -17,9 +17,17 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Set up TeX
-        run: quarto install tinytex
-
+      - name: Set up TeXLive
+        uses: teatimeguest/setup-texlive-action@v3
+        with:
+          packages: |
+            scheme-basic
+            cleveref
+            hyperref
+      
+      - name: Set up TeX fonts
+        run: tlmgr install fontspec
+        
       - name: Install Python and Dependencies
         uses: actions/setup-python@v4
         with:
