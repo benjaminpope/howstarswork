@@ -10,6 +10,17 @@ book:
     - index.qmd
     - hydrostatic-equilibrium.qmd
     - references.qmd
+  search: true
+  repo-url: https://github.com/benjaminpope/howstarswork/
+  repo-actions: [edit]
+  downloads: [pdf, epub]
+  sharing: [twitter, facebook]
+  navbar:
+    tools:
+      - icon: twitter
+        href: https://twitter.com/fringetracker
+      - icon: bluesky
+        href: https://bsky.app/profile/fringetracker.bsky.social
 
 bibliography: references.bib
 
@@ -29,3 +40,5 @@ citation-location: margin
 
 toc: true
 toc-title: Contents
+execute:
+  freeze: auto
