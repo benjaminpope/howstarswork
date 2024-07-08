@@ -28,11 +28,10 @@ jobs:
       - run: pip install jupyter
       - run: pip install -r requirements.txt
 
-      - name: Render and Publish
+      - name: Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
           path: ./quarto/
-          render: "false"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
