@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./timescales.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./housekeeping.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -197,6 +197,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./housekeeping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -356,22 +362,28 @@ n &amp;= n_0 \exp{- z/\textcolor{cyan}{h}}
 \end{aligned}
 \]</span></p>
 <p>and we call <span class="math inline">\(\textcolor{cyan}{h}\)</span> the <span class="math inline">\(\textcolor{cyan}{\text{scale height}}\)</span> in the atmosphere. Let’s calculate this for some interesting situations!</p>
-<p>Let’s plug in some numbers for the Sun, using Python:</p>
-<div id="ca3ebe1e" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>G <span class="op">=</span> <span class="fl">6.6743e-11</span> <span class="co"># N m2 kg-2; Newton's Constant</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>k_B <span class="op">=</span> <span class="fl">1.380649e-23</span> <span class="co"># J/K; Boltzmann's Constant</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>M_sun <span class="op">=</span> <span class="fl">1.9884e30</span> <span class="co"># kg</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>R_sun <span class="op">=</span> <span class="fl">6.957e8</span> <span class="co"># m</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>Teff <span class="op">=</span> <span class="dv">5780</span> <span class="co"># effective temperature, K</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> <span class="fl">1.67262192e-27</span> <span class="co"># kg</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># mean molecular weight for ionized hydrogen = </span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># mean of electron &amp; proton = m_p/2</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> G <span class="op">*</span> M_sun <span class="op">/</span> R_sun<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> k_B <span class="op">*</span> Teff <span class="op">/</span> m <span class="op">/</span> g</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>First let’s try an isothermal Earth atmosphere:</p>
+<div id="06a870a3" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mol_earth <span class="op">=</span> <span class="fl">28.964</span> <span class="op">*</span> m_p <span class="co"># average molecular weight for earth's atmosphere</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>T_earth <span class="op">=</span> <span class="dv">300</span> <span class="co"># K; room temperature</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>g_earth <span class="op">=</span> <span class="fl">9.8</span> <span class="co"># m/s</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> k_B <span class="op">*</span> T_earth <span class="op">/</span> mol_earth <span class="op">/</span> g_earth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>giving a gravity <span class="math inline">\(g =\)</span> 28.0 Earth gravities, and a scale height of 5.0<span class="math inline">\(\,\times 10^{-4}\,R_\odot\)</span>. So we see that the solar atmosphere has a <em>tiny</em> scale height relative to the overall size of the Sun, and the plane-parallel approximation is probably pretty good!</p>
+<p>This scale height of 8.7 km is 1.4<span class="math inline">\(\,\times 10^{-3} R_\oplus\)</span>; the atmosphere really is very thin and can be treated as plane-parallel. This scale height would mean that the air is 96% as dense at the top of the <span class="math inline">\(\textcolor{Maroon}{\text{Q1 Tower}}\)</span>, and 36% as dense at the summit of <span class="math inline">\(\textcolor{gray}{\text{Mt Everest}}\)</span>.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><span class="math inline">\(\textcolor{Maroon}{\text{Q1 Tower}}\)</span> on the Gold Coast is the tallest tower in Australia, at <span class="math inline">\(\textcolor{Maroon}{322.5}\)</span> m; <span class="math inline">\(\textcolor{gray}{\text{Mt Everest}}\)</span>, Earth’s tallest mountain, stands <span class="math inline">\(\textcolor{gray}{8849}\)</span> m tall.</p>
+</div></div><p>Now let’s plug in some numbers for the Sun, using Python:</p>
+<div id="600c7012" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> m_p <span class="co"># kg</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mean molecular weight for ionized hydrogen = </span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># mean of electron &amp; proton = m_p/2</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> G <span class="op">*</span> M_sun <span class="op">/</span> R_sun<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> k_B <span class="op">*</span> Teff_sun <span class="op">/</span> m <span class="op">/</span> g</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>giving a gravity <span class="math inline">\(g =\)</span> 28.0 Earth gravities, and a scale height of 5.0<span class="math inline">\(\,\times 10^{-4}\,R_\odot\)</span>. So we see that the solar atmosphere has a <em>tiny</em> scale height relative to the overall size of the Sun, and the plane-parallel approximation is even better than on Earth!</p>
 <!-- Then we explain the idea of scaling relations: how do we estimate the central pressure?
 
 - derive idea that Pc / R = rho GM / R^2 
@@ -950,8 +962,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Preface">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      <a href="./housekeeping.html" class="pagination-link" aria-label="Notes">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Notes</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
