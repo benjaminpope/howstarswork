@@ -9,6 +9,7 @@ book:
   chapters:
     - index.qmd
     - hydrostatic-equilibrium.qmd
+    - timescales.qmd
     - references.qmd
   search: true
   repo-url: https://github.com/benjaminpope/howstarswork/
@@ -28,6 +29,12 @@ format:
   pdf:
     documentclass: scrreprt
     mainfont: Palatino
+
+jupyter: 
+  kernelspec:
+    name: "conda-env-book-py"
+    language: "python"
+    display_name: "book"
 
 reference-location: margin
 citation-location: margin

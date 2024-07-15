@@ -1,0 +1,10 @@
+# Timescales in Stars
+
+We can be fairly sure that we are in hydrostatic equilibrium in a star, because we can calculate the timescale for variations in the pressure in a star to propagate through its body. 
+
+<!-- calculate this as the freefall time -->
+
+<!-- then calculate this as the sound-crossing time 
+- recall the speed of sound
+- diameter of star over this
+ -->
