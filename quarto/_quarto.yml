@@ -8,6 +8,7 @@ book:
   date-format: "D MMMM YYYY"
   chapters:
     - index.qmd
+    - housekeeping.qmd
     - hydrostatic-equilibrium.qmd
     - timescales.qmd
     - references.qmd

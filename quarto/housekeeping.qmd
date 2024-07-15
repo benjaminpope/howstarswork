@@ -1,0 +1,7 @@
+# Notes {.unnumbered}
+
+We will be using Python for computation in this book: in every case, we will be using the same fundamental constants in SI units, and the same imports of basic Python libraries:
+
+```{python}
+{{< include constants.py >}}
+```

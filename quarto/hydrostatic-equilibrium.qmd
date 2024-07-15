@@ -1,4 +1,8 @@
 # Hydrostatic Equilibrium
+```{python}
+#| echo: false
+from constants import *
+```
 
 <!-- Tufte format from https://quarto-dev.github.io/quarto-gallery/page-layout/tufte.html  -->
 The fundamental physics of stars is determined by a handful of principles: 
@@ -110,7 +114,6 @@ $$
 
 ```{python}
 #| echo: false
-import numpy as np 
 depth = f'{101325/1e3/9.8:.2f}'
 ```
 
@@ -122,8 +125,6 @@ $$
 
 For $\rho_\text{water} = 1000 \text{kg\,m}^{-3}$, to get a 1 atmosphere ($=10^6$ Pa) gauge pressure requires `{python} depth` m of water.
 :::
-
-
 
 Things are different when your density depends on pressure. For an ideal gas, $P = n k_B T$ and $\rho = n \textcolor{OliveGreen}{\langle m \rangle}$ - so we have an *equation of state* that we can use to solve for the vertical structure of an $\textcolor{orange}{\text{isothermal}}$ atmosphere:
 
@@ -146,18 +147,12 @@ $\textcolor{cyan}{h}$ the $\textcolor{cyan}{\text{scale height}}$ in the atmosph
 Let's plug in some numbers for the Sun, using Python:
 
 ```{python}
-G = 6.6743e-11 # N m2 kg-2; Newton's Constant
-k_B = 1.380649e-23 # J/K; Boltzmann's Constant
-
-M_sun = 1.9884e30 # kg
-R_sun = 6.957e8 # m
-Teff = 5780 # effective temperature, K
-m = 0.5 * 1.67262192e-27 # kg
+m = 0.5 * m_p # kg
 # mean molecular weight for ionized hydrogen = 
 # mean of electron & proton = m_p/2
 
 g = G * M_sun / R_sun**2
-h = k_B * Teff / m / g
+h = k_B * Teff_sun / m / g
 ```
 
 ```{python}
