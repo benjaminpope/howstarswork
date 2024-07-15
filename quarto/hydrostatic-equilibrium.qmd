@@ -162,10 +162,10 @@ everest = 8849
 
 
 
-This scale height of `{python} f'{(h/1e3):.1f}'` km is `{python} f'{h/R_earth * 1e3:.1f}'`$\,\times 10^{-3} R_\oplus$; the atmosphere really is very thin and can be treated as plane-parallel. This scale height would mean that the air is `{python} f'{(np.exp(-q1/h))*100:.0f}'`% as dense at the top of the $\textcolor{maroon}{\text{Q1 Tower}}$, and `{python} f'{(np.exp(-everest/h))*100:.0f}'`% as dense at the summit of $\textcolor{gray}{\text{Mt Everest}}$. 
+This scale height of `{python} f'{(h/1e3):.1f}'` km is `{python} f'{h/R_earth * 1e3:.1f}'`$\,\times 10^{-3} R_\oplus$; the atmosphere really is very thin and can be treated as plane-parallel. This scale height would mean that the air is `{python} f'{(np.exp(-q1/h))*100:.0f}'`% as dense at the top of the $\textcolor{Maroon}{\text{Q1 Tower}}$, and `{python} f'{(np.exp(-everest/h))*100:.0f}'`% as dense at the summit of $\textcolor{gray}{\text{Mt Everest}}$. 
 
 ::: column-margin
-$\textcolor{maroon}{\text{Q1 Tower}}$ on the Gold Coast is the tallest tower in Australia, at $\textcolor{maroon}{322.5}$ m; $\textcolor{gray}{\text{Mt Everest}}$, Earth's tallest mountain, stands $\textcolor{gray}{8849}$ m tall.
+$\textcolor{Maroon}{\text{Q1 Tower}}$ on the Gold Coast is the tallest tower in Australia, at $\textcolor{Maroon}{322.5}$ m; $\textcolor{gray}{\text{Mt Everest}}$, Earth's tallest mountain, stands $\textcolor{gray}{8849}$ m tall.
 :::
 
 
