@@ -144,7 +144,32 @@ $$
 and we call 
 $\textcolor{cyan}{h}$ the $\textcolor{cyan}{\text{scale height}}$ in the atmosphere. Let's calculate this for some interesting situations!
 
-Let's plug in some numbers for the Sun, using Python:
+First let's try an isothermal Earth atmosphere:
+
+```{python}
+mol_earth = 28.964 * m_p # average molecular weight for earth's atmosphere
+T_earth = 300 # K; room temperature
+g_earth = 9.8 # m/s
+
+h = k_B * T_earth / mol_earth / g_earth
+```
+
+```{python}
+#| echo: false
+q1 = 322.5
+everest = 8849
+```
+
+
+
+This scale height of `{python} f'{(h/1e3):.1f}'` km is `{python} f'{h/R_earth * 1e3:.1f}'`$\,\times 10^{-3} R_\oplus$; the atmosphere really is very thin and can be treated as plane-parallel. This scale height would mean that the air is `{python} f'{(np.exp(-q1/h))*100:.0f}'`% as dense at the top of the $\textcolor{maroon}{\text{Q1 Tower}}$, and `{python} f'{(np.exp(-everest/h))*100:.0f}'`% as dense at the summit of $\textcolor{gray}{\text{Mt Everest}}$. 
+
+::: column-margin
+$\textcolor{maroon}{\text{Q1 Tower}}$ on the Gold Coast is the tallest tower in Australia, at $\textcolor{maroon}{322.5}$ m; $\textcolor{gray}{\text{Mt Everest}}$, Earth's tallest mountain, stands $\textcolor{gray}{8849}$ m tall.
+:::
+
+
+Now let's plug in some numbers for the Sun, using Python:
 
 ```{python}
 m = 0.5 * m_p # kg
@@ -161,8 +186,7 @@ g_over_earth = f'{g/9.8:.1f}'
 h_fraction = f'{h/R_sun * 1e4:.1f}'
 ```
 
-giving a gravity $g =$ `{python} g_over_earth` Earth gravities, and a scale height of `{python} h_fraction`$\,\times 10^{-4}\,R_\odot$. So we see that the solar atmosphere has a _tiny_ scale height relative to the overall size of the Sun, and the plane-parallel approximation is probably pretty good!
-
+giving a gravity $g =$ `{python} g_over_earth` Earth gravities, and a scale height of `{python} h_fraction`$\,\times 10^{-4}\,R_\odot$. So we see that the solar atmosphere has a _tiny_ scale height relative to the overall size of the Sun, and the plane-parallel approximation is even better than on Earth!
 
 <!-- Then we explain the idea of scaling relations: how do we estimate the central pressure?
 

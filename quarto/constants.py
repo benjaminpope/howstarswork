@@ -8,3 +8,6 @@ m_p = 1.67262192e-27 # kg; proton mass
 M_sun = 1.9884e30 # kg
 R_sun = 6.957e8 # m
 Teff_sun = 5780 # effective temperature, K
+
+M_earth = 5.972e24 # kg
+R_earth = 6371e3 # m 
