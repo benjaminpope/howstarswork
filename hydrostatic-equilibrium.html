@@ -339,17 +339,17 @@ r = R_{\textcolor{NavyBlue}{\oplus}} + \textcolor{green}{z}
 \frac{dP}{dh} = -\rho \cdot \underbrace{\frac{G M_r}{r^2}}_{{\equiv g \text{, constant}}}
 \]</span></p>
 <!-- water -->
-<p>If we are dealing with an incompressible liquid like water, then <span class="math inline">\(\rho\)</span> is a constant and we simply have</p>
-<p><span class="math display">\[
-P(z) = P_0 - \rho g z
-\]</span></p>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <p>We can rearrange this to solve for the depth of water required to reach a gauge pressure <span class="math inline">\(\Delta P \equiv P-P_0\)</span>: <span class="math display">\[
 z = - \frac{\Delta P}{\rho g}
 \]</span></p>
 <p>For <span class="math inline">\(\rho_\text{water} = 1000 \text{kg\,m}^{-3}\)</span>, to get a 1 atmosphere (<span class="math inline">\(=10^6\)</span> Pa) gauge pressure requires 10.34 m of water.</p>
-</div></div><p>Things are different when your density depends on pressure. For an ideal gas, <span class="math inline">\(P = n k_B T\)</span> and <span class="math inline">\(\rho = n \textcolor{OliveGreen}{\langle m \rangle}\)</span> - so we have an <em>equation of state</em> that we can use to solve for the vertical structure of an <span class="math inline">\(\textcolor{orange}{\text{isothermal}}\)</span> atmosphere:</p>
+</div></div><p>If we are dealing with an incompressible liquid like water, then <span class="math inline">\(\rho\)</span> is a constant and we simply have</p>
+<p><span class="math display">\[
+P(z) = P_0 - \rho g z
+\]</span></p>
+<p>Things are different when your density depends on pressure. For an ideal gas, <span class="math inline">\(P = n k_B T\)</span> and <span class="math inline">\(\rho = n \textcolor{OliveGreen}{\langle m \rangle}\)</span> - so we have an <em>equation of state</em> that we can use to solve for the vertical structure of an <span class="math inline">\(\textcolor{orange}{\text{isothermal}}\)</span> atmosphere:</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <p>where <span class="math inline">\(\textcolor{OliveGreen}{\langle m \rangle}\)</span> is the <span class="math inline">\(\textcolor{OliveGreen}{\text{mean molecular mass}}\)</span>, and <span class="math inline">\(\textcolor{orange}{\text{isothermal}}\)</span> means having the same temperature everywhere, from ἴσος, “same”, and θέρμη, “heat”.</p>
@@ -363,7 +363,7 @@ n &amp;= n_0 \exp{- z/\textcolor{cyan}{h}}
 \]</span></p>
 <p>and we call <span class="math inline">\(\textcolor{cyan}{h}\)</span> the <span class="math inline">\(\textcolor{cyan}{\text{scale height}}\)</span> in the atmosphere. Let’s calculate this for some interesting situations!</p>
 <p>First let’s try an isothermal Earth atmosphere:</p>
-<div id="06a870a3" class="cell" data-execution_count="3">
+<div id="3341b922" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mol_earth <span class="op">=</span> <span class="fl">28.964</span> <span class="op">*</span> m_p <span class="co"># average molecular weight for earth's atmosphere</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>T_earth <span class="op">=</span> <span class="dv">300</span> <span class="co"># K; room temperature</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>g_earth <span class="op">=</span> <span class="fl">9.8</span> <span class="co"># m/s</span></span>
@@ -375,7 +375,7 @@ n &amp;= n_0 \exp{- z/\textcolor{cyan}{h}}
 <div class="no-row-height column-margin column-container"><div class="">
 <p><span class="math inline">\(\textcolor{Maroon}{\text{Q1 Tower}}\)</span> on the Gold Coast is the tallest tower in Australia, at <span class="math inline">\(\textcolor{Maroon}{322.5}\)</span> m; <span class="math inline">\(\textcolor{gray}{\text{Mt Everest}}\)</span>, Earth’s tallest mountain, stands <span class="math inline">\(\textcolor{gray}{8849}\)</span> m tall.</p>
 </div></div><p>Now let’s plug in some numbers for the Sun, using Python:</p>
-<div id="600c7012" class="cell" data-execution_count="5">
+<div id="a25e232f" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> m_p <span class="co"># kg</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mean molecular weight for ionized hydrogen = </span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># mean of electron &amp; proton = m_p/2</span></span>
