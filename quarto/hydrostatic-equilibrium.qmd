@@ -106,11 +106,6 @@ $$
 
 <!-- water -->
 
-If we are dealing with an incompressible liquid like water, then $\rho$ is a constant and we simply have 
-
-$$ 
-P(z) = P_0 - \rho g z
-$$
 
 ```{python}
 #| echo: false
@@ -125,6 +120,12 @@ $$
 
 For $\rho_\text{water} = 1000 \text{kg\,m}^{-3}$, to get a 1 atmosphere ($=10^6$ Pa) gauge pressure requires `{python} depth` m of water.
 :::
+If we are dealing with an incompressible liquid like water, then $\rho$ is a constant and we simply have 
+
+$$ 
+P(z) = P_0 - \rho g z
+$$
+
 
 Things are different when your density depends on pressure. For an ideal gas, $P = n k_B T$ and $\rho = n \textcolor{OliveGreen}{\langle m \rangle}$ - so we have an *equation of state* that we can use to solve for the vertical structure of an $\textcolor{orange}{\text{isothermal}}$ atmosphere:
 
