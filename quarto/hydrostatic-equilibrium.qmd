@@ -1,5 +1,6 @@
 # Hydrostatic Equilibrium
 
+<!-- Tufte format from https://quarto-dev.github.io/quarto-gallery/page-layout/tufte.html  -->
 The fundamental physics of stars is determined by a handful of principles: 
 
 ::: column-margin
