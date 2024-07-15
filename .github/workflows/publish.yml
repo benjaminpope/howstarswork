@@ -1,46 +1,46 @@
-on:
-  workflow_dispatch:
-  push:
-    branches: main
+# on:
+#   workflow_dispatch:
+#   push:
+#     branches: main
 
-name: Quarto Publish
+# name: Quarto Publish
 
-jobs:
-  build-deploy:
-    runs-on: macos-latest
-    permissions:
-      contents: write
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
+# jobs:
+#   build-deploy:
+#     runs-on: macos-latest
+#     permissions:
+#       contents: write
+#     steps:
+#       - name: Check out repository
+#         uses: actions/checkout@v4
 
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-        with:
-          tinytex: true  
+#       - name: Set up Quarto
+#         uses: quarto-dev/quarto-actions/setup@v2
+#         with:
+#           tinytex: true  
       
-      - name: Install Python and Dependencies
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11.9'
-          cache: 'pip'
-      - run: pip install jupyter
-      # - run: pip install -r requirements.txt
+#       - name: Install Python and Dependencies
+#         uses: actions/setup-python@v4
+#         with:
+#           python-version: '3.11.9'
+#           cache: 'pip'
+#       - run: pip install jupyter
+#       # - run: pip install -r requirements.txt
 
-      - name: Install Conda 
-        uses: conda-incubator/setup-miniconda@v2
-        with:
-          activate-environment: book
-          environment-file: etc/book.yml
-          auto-activate-base: false
-      - run: |
-          conda info
-          conda list
+#       - name: Install Conda 
+#         uses: conda-incubator/setup-miniconda@v2
+#         with:
+#           activate-environment: book
+#           environment-file: etc/book.yml
+#           auto-activate-base: false
+#       - run: |
+#           conda info
+#           conda list
   
-      - name: Publish
-        uses: quarto-dev/quarto-actions/publish@v2
-        with:
-          target: gh-pages
-          path: ./quarto/
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#       - name: Publish
+#         uses: quarto-dev/quarto-actions/publish@v2
+#         with:
+#           target: gh-pages
+#           path: ./quarto/
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
