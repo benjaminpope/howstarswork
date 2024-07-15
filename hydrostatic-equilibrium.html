@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.54">
+<meta name="generator" content="quarto-1.5.53">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Hydrostatic Equilibrium – How Stars Work</title>
+<title>1&nbsp; Hydrostatic Equilibrium – How Stars Work</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
+<link href="./timescales.html" rel="next">
 <link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -112,7 +146,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./hydrostatic-equilibrium.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hydrostatic Equilibrium</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./hydrostatic-equilibrium.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hydrostatic Equilibrium</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -162,13 +196,19 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hydrostatic-equilibrium.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hydrostatic Equilibrium</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hydrostatic Equilibrium</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./timescales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Timescales in Stars</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -187,7 +227,7 @@ window.Quarto = {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#the-equation-of-hydrostatic-equilibrium" id="toc-the-equation-of-hydrostatic-equilibrium" class="nav-link active" data-scroll-target="#the-equation-of-hydrostatic-equilibrium"><span class="header-section-number">2.1</span> The Equation of Hydrostatic Equilibrium</a></li>
+  <li><a href="#the-equation-of-hydrostatic-equilibrium" id="toc-the-equation-of-hydrostatic-equilibrium" class="nav-link active" data-scroll-target="#the-equation-of-hydrostatic-equilibrium"><span class="header-section-number">1.1</span> The Equation of Hydrostatic Equilibrium</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/benjaminpope/howstarswork/edit/main/hydrostatic-equilibrium.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
@@ -196,7 +236,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hydrostatic Equilibrium</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hydrostatic Equilibrium</span></h1>
 </div>
 
 
@@ -245,8 +285,8 @@ window.Quarto = {
 p_\text{degeneracy} = \frac{\textcolor{purple}{\hbar}}{5\textcolor{green}{m_e}} (\frac{3}{8 \pi})^{2/3} n^{5/3}
 \]</span></p>
 <p>It turns out this is about a quarter of the gas pressure at the core of the Sun!</p>
-<section id="the-equation-of-hydrostatic-equilibrium" class="level2 page-columns page-full" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="the-equation-of-hydrostatic-equilibrium"><span class="header-section-number">2.1</span> The Equation of Hydrostatic Equilibrium</h2>
+<section id="the-equation-of-hydrostatic-equilibrium" class="level2 page-columns page-full" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="the-equation-of-hydrostatic-equilibrium"><span class="header-section-number">1.1</span> The Equation of Hydrostatic Equilibrium</h2>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <p>i.e.&nbsp;<span class="math inline">\(M_r\)</span> is the total mass integrated out up to a radius <span class="math inline">\(r\)</span>.</p>
@@ -273,6 +313,72 @@ M_\text{shell} a = a \rho A dr = - A dP  - \frac{G M_r M_\text{shell}}{r^2}
 </div></div><p><span class="math display">\[
 \frac{dP}{dr} = -\rho \frac{G M_r}{r^2}
 \]</span></p>
+<!-- Now we explain in relation to the Earth: 
+
+- pressure under the sea
+    - calculate 10m in the (incompressible) water = 1 atmosphere
+- atmospheric lapse rate
+    - illustrate with figure showing 322.5m Q1 tower, Everest, Kármán line
+- plane-parallel solar atmospheric scale height 
+-->
+<p>This is actually a very familiar equation that we encounter not just in first-year physics, but in everyday life. Nearly all the mass of the Earth is in its body, and only a bit less than a millionth in its atmosphere. So we can consider a situation where</p>
+<p><span class="math display">\[
+r = R_{\textcolor{NavyBlue}{\oplus}} + \textcolor{green}{z}
+\]</span></p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>where <span class="math inline">\(\textcolor{green}{z}\)</span> is the <span class="math inline">\(\textcolor{green}{\text{height}}\)</span> in the atmosphere <span class="math inline">\(\llless R_\oplus\)</span>. We often denote astronomical bodies by traditional symbols: <span class="math inline">\(\textcolor{NavyBlue}{\oplus}\)</span> is the astronomical symbol for the <span class="math inline">\(\textcolor{NavyBlue}{\text{Earth}}\)</span>, and <span class="math inline">\(\textcolor{yellow}{\odot}\)</span> the <span class="math inline">\(\textcolor{yellow}{\text{Sun}}\)</span>. There are many other traditional symbols that are now rarely used.</p>
+</div></div><p>We can now write this in familiar terms with the acceleration due to gravity as</p>
+<p><span class="math display">\[
+\frac{dP}{dh} = -\rho \cdot \underbrace{\frac{G M_r}{r^2}}_{{\equiv g \text{, constant}}}
+\]</span></p>
+<!-- water -->
+<p>If we are dealing with an incompressible liquid like water, then <span class="math inline">\(\rho\)</span> is a constant and we simply have</p>
+<p><span class="math display">\[
+P(z) = P_0 - \rho g z
+\]</span></p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>We can rearrange this to solve for the depth of water required to reach a gauge pressure <span class="math inline">\(\Delta P \equiv P-P_0\)</span>: <span class="math display">\[
+z = - \frac{\Delta P}{\rho g}
+\]</span></p>
+<p>For <span class="math inline">\(\rho_\text{water} = 1000 \text{kg\,m}^{-3}\)</span>, to get a 1 atmosphere (<span class="math inline">\(=10^6\)</span> Pa) gauge pressure requires 10.34 m of water.</p>
+</div></div><p>Things are different when your density depends on pressure. For an ideal gas, <span class="math inline">\(P = n k_B T\)</span> and <span class="math inline">\(\rho = n \textcolor{OliveGreen}{\langle m \rangle}\)</span> - so we have an <em>equation of state</em> that we can use to solve for the vertical structure of an <span class="math inline">\(\textcolor{orange}{\text{isothermal}}\)</span> atmosphere:</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>where <span class="math inline">\(\textcolor{OliveGreen}{\langle m \rangle}\)</span> is the <span class="math inline">\(\textcolor{OliveGreen}{\text{mean molecular mass}}\)</span>, and <span class="math inline">\(\textcolor{orange}{\text{isothermal}}\)</span> means having the same temperature everywhere, from ἴσος, “same”, and θέρμη, “heat”.</p>
+</div></div><p><span class="math display">\[
+\begin{aligned}
+\frac{d}{dz} (n k_B T) &amp;= - \langle m \rangle g n \\
+\frac{dn}{dz} &amp;= - \frac{\langle m \rangle g}{k_B T} \cdot N \\
+n &amp;= n_0 \exp{(- \frac{\langle m \rangle g}{k_B T} z)} \\
+n &amp;= n_0 \exp{- z/\textcolor{cyan}{h}}
+\end{aligned}
+\]</span></p>
+<p>and we call <span class="math inline">\(\textcolor{cyan}{h}\)</span> the <span class="math inline">\(\textcolor{cyan}{\text{scale height}}\)</span> in the atmosphere. Let’s calculate this for some interesting situations!</p>
+<p>Let’s plug in some numbers for the Sun, using Python:</p>
+<div id="ca3ebe1e" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>G <span class="op">=</span> <span class="fl">6.6743e-11</span> <span class="co"># N m2 kg-2; Newton's Constant</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>k_B <span class="op">=</span> <span class="fl">1.380649e-23</span> <span class="co"># J/K; Boltzmann's Constant</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>M_sun <span class="op">=</span> <span class="fl">1.9884e30</span> <span class="co"># kg</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>R_sun <span class="op">=</span> <span class="fl">6.957e8</span> <span class="co"># m</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>Teff <span class="op">=</span> <span class="dv">5780</span> <span class="co"># effective temperature, K</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> <span class="fl">1.67262192e-27</span> <span class="co"># kg</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># mean molecular weight for ionized hydrogen = </span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># mean of electron &amp; proton = m_p/2</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> G <span class="op">*</span> M_sun <span class="op">/</span> R_sun<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> k_B <span class="op">*</span> Teff <span class="op">/</span> m <span class="op">/</span> g</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>giving a gravity <span class="math inline">\(g =\)</span> 28.0 Earth gravities, and a scale height of 5.0<span class="math inline">\(\,\times 10^{-4}\,R_\odot\)</span>. So we see that the solar atmosphere has a <em>tiny</em> scale height relative to the overall size of the Sun, and the plane-parallel approximation is probably pretty good!</p>
+<!-- Then we explain the idea of scaling relations: how do we estimate the central pressure?
+
+- derive idea that Pc / R = rho GM / R^2 
+- estimate central mass of the Sun 
+- discuss the general idea of scaling relations in this course: 
+    - we are going to find relations for R, L, etc
+ -->
 
 
 </section>
@@ -844,13 +950,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      <a href="./index.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./timescales.html" class="pagination-link" aria-label="Timescales in Stars">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Timescales in Stars</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
