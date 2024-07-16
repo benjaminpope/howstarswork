@@ -1,5 +1,6 @@
-import numpy as np 
-import matplotlib.pyplot as plt 
+import numpy as np # for calculations 
+import matplotlib.pyplot as plt # for plots
+from helpers import * # misc functions
 
 G = 6.6743e-11 # N m2 kg-2; Newton's Constant
 k_B = 1.380649e-23 # J/K; Boltzmann's Constant

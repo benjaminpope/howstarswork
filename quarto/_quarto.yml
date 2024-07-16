@@ -34,7 +34,7 @@ format:
 jupyter: python3
 
 reference-location: margin
-citation-location: margin
+# citation-location: margin
 
 toc: true
 toc-title: Contents

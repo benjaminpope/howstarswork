@@ -62,7 +62,7 @@ and therefore rearranging, in equilibrium ($a = 0$) we have the __equation of hy
 
 $$ 
 \frac{dP}{dr} = -\rho \frac{G M_r}{r^2}
-$$
+$${#eq-hydrostatic-equilibrium}
 [*Tattoo this equation on the back of your eyelids.*]{.aside}
 
 <!-- Now we explain in relation to the Earth: 
@@ -73,6 +73,8 @@ $$
     - illustrate with figure showing 322.5m Q1 tower, Everest, Kármán line
 - plane-parallel solar atmospheric scale height 
 -->
+
+## Plane-Parallel Approximation
 
 This is actually a very familiar equation that we encounter not just in first-year physics, but in everyday life. Nearly all the mass of the Earth is in its body, and only a bit less than a millionth in its atmosphere. So we can consider a situation where 
 
@@ -166,3 +168,31 @@ giving a gravity $g =$ `{python} g_over_earth` Earth gravities, and a scale heig
 - discuss the general idea of scaling relations in this course: 
     - we are going to find relations for R, L, etc
  -->
+
+## Scaling Relations
+
+Most of the time, it is not possible to calculate properties of realistic stars in closed-form equations, and we will have to use computer models. But what *understanding* does this buy us? It is often just as important to have a sense of how these properties scale with one another in general terms, even if we might not be able to estimate actual numbers to better than an order of magnitude.
+
+As a first example, let's estimate the pressure at the centre of the Sun. Ideally, we would solve for the full stellar structure using some equation of state, and then integrate $\frac{dP}{dr}$ from zero at the surface $r=R_\odot$ all the way to the core. Instead, we're going to do something very handwavy. Let's rearrange the $\frac{dP}{dr}$ in @{eq-hydrostatic-equilibrium} to instead be the mean gradient $P/R_\odot$:
+
+$$
+\begin{aligned}
+\frac{dP}{dr} &= -\rho \frac{GM_r}{r^2} \\ 
+\frac{P}{R_\odot} &\approx \langle \rho \rangle \frac{GM_\odot}{R_\odot^2}\\
+P &\approx \langle \rho \rangle \frac{GM_\odot}{R_\odot}\\
+&\approx \frac{M_\odot}{4/3 \pi R_\odot^3} \frac{GM_\odot}{R_\odot}\\
+&\approx \frac{GM_\odot^2}{4/3 \pi R_\odot^4}
+&\propto \frac{GM_\odot^2}{R_\odot^4}
+\end{aligned}
+$$
+[Remarkably, it can be shown analytically [@Milne1936] that $P > \frac{GM^2}{8\pi R^4}$ for an arbitrary star - so we are not even *too* far from the exact solution with these mathematical sins. It is often the case that very coarse approximations differ from exact solutions by a factor of order unity; we will therefore often drop these factors and just think about the scaling.]{.aside}
+
+```{python}
+#| echo: false
+P_sun = G * M_sun**2 / R_sun**4
+```
+
+which for the Sun, gives `{python} md_float(P_sun)` Pa pressure, which is within an order of magnitude of the central pressure of `{python} md_float(2.3e+16)` Pa in the Standard Solar Model [@Guenther1992].
+
+We are going to do this kind of approximation a lot in these notes: to estimate how nuclear reactions scale with temperature, how stellar luminosities depend on mass, how stars form and how they die - and we will also tackle real computer models of these processes, so that we build both intuitive understanding and accurate models we can fit to data. Both are essential tools in astronomy. ["May God us keep From Single vision & Newtons sleep." — William Blake, Letter to Thomas Butts, 22 November 1802.]{.aside}
+
