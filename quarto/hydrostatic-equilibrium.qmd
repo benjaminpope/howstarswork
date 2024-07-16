@@ -7,10 +7,7 @@ from constants import *
 <!-- Tufte format from https://quarto-dev.github.io/quarto-gallery/page-layout/tufte.html  -->
 The fundamental physics of stars is determined by a handful of principles: 
 
-::: column-margin
-hydrostatic from Greek ὕδωρ, 'water', and στάσις, 'standing'; just like water in a tank.
-:::
-- the star is everywhere in pressure balance under its own gravity, or *hydrostatic equilibrium*; 
+- the star is everywhere in pressure balance under its own gravity, or *hydrostatic equilibrium*; [hydrostatic from Greek ὕδωρ, 'water', and στάσις, 'standing'; just like water in a tank.]{.aside}
 - its cooling by radiation must be met by 
     - *energy production* in its interior by nuclear fusion or gravitational contraction, 
     - and *energy transport* to its surface by radiation, convection, and conduction; 
@@ -21,38 +18,29 @@ Let's talk about hydrostatic equilibrium first.
 
 An ordinary star like the Sun, throughout its whole body, is to a very good approximation an *ideal gas*, and is fully ionized except in its outermost layer. This means that the gas pressure satisfies the equation of state
 
-::: column-margin
-where $\textcolor{blue}{p}$ is the <font color='blue'>pressure</font>, $n$ is the number density (particles per volume) of the gas, $\textcolor{red}{k_B}$ is <font color='red'>Boltzmann's constant</font> ($1.38\times10^{-16}$ erg/K), and $\textcolor{orange}{T}$ is the <font color='orange'>temperature</font> in kelvin.
-:::
+
 $$
 \textcolor{blue}{p} = n \textcolor{red}{k_B} \textcolor{orange}{T}
 $$
-
+[where $\textcolor{blue}{p}$ is the <font color='blue'>pressure</font>, $n$ is the number density (particles per volume) of the gas, $\textcolor{red}{k_B}$ is <font color='red'>Boltzmann's constant</font> ($1.38\times10^{-16}$ erg/K), and $\textcolor{orange}{T}$ is the <font color='orange'>temperature</font> in kelvin.]{.aside}
 
 In a star like the Sun, the pressure is mostly provided by gas pressure. In hotter stars, *photon* or *radiation pressure* is dominant, but in the Sun this is $\sim 10^{-3} p_\text{gas}$. 
 
 Even in the Sun, though, the gas is not *quite* a classical ideal gas: quantum mechanics is already relevant. There is an equation we will derive later in these notes for the pressure due to the *degeneracy* of a gas where the quantum wavefunctions of its constituent particles are nearly overlapping: 
 
-::: column-margin
-where $\textcolor{purple}{\hbar}$ is the <font color='purple'>quantum of action $h/2\pi$</font> ($1.0546 \times 10^{-27} \text{erg}\cdot\text{s}$), and $\textcolor{green}{m_e}$ the <font color='green'>mass of the electron</font>.
-:::
 $$
 p_\text{degeneracy} = \frac{\textcolor{purple}{\hbar}}{5\textcolor{green}{m_e}} (\frac{3}{8 \pi})^{2/3} n^{5/3}
 $$
-
+[where $\textcolor{purple}{\hbar}$ is the <font color='purple'>quantum of action $h/2\pi$</font> ($1.0546 \times 10^{-27} \text{erg}\cdot\text{s}$), and $\textcolor{green}{m_e}$ the <font color='green'>mass of the electron</font>.]{.aside}
 It turns out this is about a quarter of the gas pressure at the core of the Sun! 
 
 ## The Equation of Hydrostatic Equilibrium
 
-::: column-margin
-i.e. $M_r$ is the total mass integrated out up to a radius $r$.
-:::
-Consider a thin shell of radius $r$ (and surface area $A = 4\pi r^2$), thickness $dr$, and mass density $\rho$, enclosing a mass $M_r$. 
+Consider a thin shell of radius $r$ (and surface area $A = 4\pi r^2$), thickness $dr$, and mass density $\rho$, enclosing a mass $M_r$[i.e. $M_r$ is the total mass integrated out up to a radius $r$.
+]{.aside}. 
 
-::: column-margin
-[Newton's Shell Theorem](https://en.wikipedia.org/wiki/Shell_theorem) states that the gravitational attraction of a symmetric shell of matter, and therefore by linearity of a ball of matter, can be treated as if the mass were concentrated at a point at the centre. 
-:::
-The mass of this shell is $M_\text{shell} = \rho A dr$, and from Newton's law of gravitation the magnitude of the gravitational force of the whole shell inwards is 
+The mass of this shell is $M_\text{shell} = \rho A dr$, and from Newton's law of gravitation[[Newton's Shell Theorem](https://en.wikipedia.org/wiki/Shell_theorem) states that the gravitational attraction of a symmetric shell of matter, and therefore by linearity of a ball of matter, can be treated as if the mass were concentrated at a point at the centre. 
+]{.aside} the magnitude of the gravitational force of the whole shell inwards is 
 
 $$ 
 \frac{- G M_r M_\text{shell}}{r^2}
@@ -72,12 +60,10 @@ $$
 
 and therefore rearranging, in equilibrium ($a = 0$) we have the __equation of hydrostatic equilibrium__:
 
-::: column-margin
-*Tattoo this equation on the back of your eyelids.*
-:::
 $$ 
 \frac{dP}{dr} = -\rho \frac{G M_r}{r^2}
 $$
+[*Tattoo this equation on the back of your eyelids.*]{.aside}
 
 <!-- Now we explain in relation to the Earth: 
 
@@ -93,10 +79,7 @@ This is actually a very familiar equation that we encounter not just in first-ye
 $$
 r = R_{\textcolor{NavyBlue}{\oplus}} + \textcolor{green}{z}
 $$
-
-::: column-margin
-where $\textcolor{green}{z}$ is the $\textcolor{green}{\text{height}}$ in the atmosphere $\llless R_\oplus$. We often denote astronomical bodies by traditional symbols: $\textcolor{NavyBlue}{\oplus}$ is the astronomical symbol for the $\textcolor{NavyBlue}{\text{Earth}}$, and $\textcolor{yellow}{\odot}$ the $\textcolor{yellow}{\text{Sun}}$. There are many other traditional symbols that are now rarely used.
-:::
+[where $\textcolor{green}{z}$ is the $\textcolor{green}{\text{height}}$ in the atmosphere $\llless R_\oplus$. We often denote astronomical bodies by traditional symbols: $\textcolor{NavyBlue}{\oplus}$ is the astronomical symbol for the $\textcolor{NavyBlue}{\text{Earth}}$, and $\textcolor{yellow}{\odot}$ the $\textcolor{yellow}{\text{Sun}}$. There are many other traditional symbols that are now rarely used.]{.aside}
 
 We can now write this in familiar terms with the acceleration due to gravity as
 
@@ -112,26 +95,19 @@ $$
 depth = f'{101325/1e3/9.8:.2f}'
 ```
 
-::: column-margin
-We can rearrange this to solve for the depth of water required to reach a gauge pressure $\Delta P \equiv P-P_0$: 
+
+If we are dealing with an incompressible liquid like water,[We can rearrange this to solve for the depth of water required to reach a gauge pressure $\Delta P \equiv P-P_0$: 
 $$
 z = - \frac{\Delta P}{\rho g}
 $$
-
-For $\rho_\text{water} = 1000 \text{kg\,m}^{-3}$, to get a 1 atmosphere ($=10^6$ Pa) gauge pressure requires `{python} depth` m of water.
-:::
-If we are dealing with an incompressible liquid like water, then $\rho$ is a constant and we simply have 
+For $\rho_\text{water} = 1000 \text{kg\,m}^{-3}$, to get a 1 atmosphere ($=10^6$ Pa) gauge pressure requires `{python} depth` m of water.]{.aside} then $\rho$ is a constant and we simply have 
 
 $$ 
 P(z) = P_0 - \rho g z
 $$
 
-
-Things are different when your density depends on pressure. For an ideal gas, $P = n k_B T$ and $\rho = n \textcolor{OliveGreen}{\langle m \rangle}$ - so we have an *equation of state* that we can use to solve for the vertical structure of an $\textcolor{orange}{\text{isothermal}}$ atmosphere:
-
-::: column-margin
-where $\textcolor{OliveGreen}{\langle m \rangle}$ is the $\textcolor{OliveGreen}{\text{mean molecular mass}}$, and $\textcolor{orange}{\text{isothermal}}$ means having the same temperature everywhere, from ἴσος, "same", and θέρμη, "heat".
-:::
+Things are different when your density depends on pressure. For an ideal gas, $P = n k_B T$ and $\rho = n \textcolor{OliveGreen}{\langle m \rangle}$[where $\textcolor{OliveGreen}{\langle m \rangle}$ is the $\textcolor{OliveGreen}{\text{mean molecular mass}}$, and $\textcolor{orange}{\text{isothermal}}$ means having the same temperature everywhere, from ἴσος, "same", and θέρμη, "heat".
+]{.aside} - so we have an *equation of state* that we can use to solve for the vertical structure of an $\textcolor{orange}{\text{isothermal}}$ atmosphere:
 
 $$ 
 \begin{aligned}
@@ -161,13 +137,7 @@ q1 = 322.5
 everest = 8849
 ```
 
-
-
-This scale height of `{python} f'{(h/1e3):.1f}'` km is `{python} f'{h/R_earth * 1e3:.1f}'`$\,\times 10^{-3} R_\oplus$; the atmosphere really is very thin and can be treated as plane-parallel. This scale height would mean that the air is `{python} f'{(np.exp(-q1/h))*100:.0f}'`% as dense at the top of the $\textcolor{Maroon}{\text{Q1 Tower}}$, and `{python} f'{(np.exp(-everest/h))*100:.0f}'`% as dense at the summit of $\textcolor{gray}{\text{Mt Everest}}$. 
-
-::: column-margin
-$\textcolor{Maroon}{\text{Q1 Tower}}$ on the Gold Coast is the tallest tower in Australia, at $\textcolor{Maroon}{322.5}$ m; $\textcolor{gray}{\text{Mt Everest}}$, Earth's tallest mountain, stands $\textcolor{gray}{8849}$ m tall.
-:::
+This scale height of `{python} f'{(h/1e3):.1f}'` km is `{python} f'{h/R_earth * 1e3:.1f}'`$\,\times 10^{-3} R_\oplus$; the atmosphere really is very thin and can be treated as plane-parallel. This scale height would mean that the air is `{python} f'{(np.exp(-q1/h))*100:.0f}'`% as dense at the top of the $\textcolor{Maroon}{\text{Q1 Tower}}$, and `{python} f'{(np.exp(-everest/h))*100:.0f}'`% as dense at the summit of $\textcolor{gray}{\text{Mt Everest}}$.[$\textcolor{Maroon}{\text{Q1 Tower}}$ on the Gold Coast is the tallest tower in Australia, at $\textcolor{Maroon}{322.5}$ m; $\textcolor{gray}{\text{Mt Everest}}$, Earth's tallest mountain, stands $\textcolor{gray}{8849}$ m tall.]{.aside} 
 
 
 Now let's plug in some numbers for the Sun, using Python:
