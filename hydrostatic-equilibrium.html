@@ -54,7 +54,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -234,6 +254,8 @@ window.Quarto = {
    
   <ul>
   <li><a href="#the-equation-of-hydrostatic-equilibrium" id="toc-the-equation-of-hydrostatic-equilibrium" class="nav-link active" data-scroll-target="#the-equation-of-hydrostatic-equilibrium"><span class="header-section-number">1.1</span> The Equation of Hydrostatic Equilibrium</a></li>
+  <li><a href="#plane-parallel-approximation" id="toc-plane-parallel-approximation" class="nav-link" data-scroll-target="#plane-parallel-approximation"><span class="header-section-number">1.2</span> Plane-Parallel Approximation</a></li>
+  <li><a href="#scaling-relations" id="toc-scaling-relations" class="nav-link" data-scroll-target="#scaling-relations"><span class="header-section-number">1.3</span> Scaling Relations</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/benjaminpope/howstarswork/edit/main/hydrostatic-equilibrium.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
@@ -261,11 +283,8 @@ window.Quarto = {
 
 <!-- Tufte format from https://quarto-dev.github.io/quarto-gallery/page-layout/tufte.html  -->
 <p>The fundamental physics of stars is determined by a handful of principles:</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>hydrostatic from Greek ὕδωρ, ‘water’, and στάσις, ‘standing’; just like water in a tank.</p>
-</div></div><ul>
-<li>the star is everywhere in pressure balance under its own gravity, or <em>hydrostatic equilibrium</em>;</li>
+<ul>
+<li>the star is everywhere in pressure balance under its own gravity, or <em>hydrostatic equilibrium</em>; </li>
 <li>its cooling by radiation must be met by
 <ul>
 <li><em>energy production</em> in its interior by nuclear fusion or gravitational contraction,</li>
@@ -274,33 +293,20 @@ window.Quarto = {
 <li>how its material responds to pressure (parametrized the <em>equation of state</em>) and to light (parametrized by <em>opacity</em>); and</li>
 <li>in its interior and a star is typically rotating and magnetic, which we will neglect in most of these notes.</li>
 </ul>
-<p>Let’s talk about hydrostatic equilibrium first.</p>
+<div class="no-row-height column-margin column-container"><span class="margin-aside">hydrostatic from Greek ὕδωρ, ‘water’, and στάσις, ‘standing’; just like water in a tank.</span></div><p>Let’s talk about hydrostatic equilibrium first.</p>
 <p>An ordinary star like the Sun, throughout its whole body, is to a very good approximation an <em>ideal gas</em>, and is fully ionized except in its outermost layer. This means that the gas pressure satisfies the equation of state</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>where <span class="math inline">\(\textcolor{blue}{p}\)</span> is the <font color="blue">pressure</font>, <span class="math inline">\(n\)</span> is the number density (particles per volume) of the gas, <span class="math inline">\(\textcolor{red}{k_B}\)</span> is <font color="red">Boltzmann’s constant</font> (<span class="math inline">\(1.38\times10^{-16}\)</span> erg/K), and <span class="math inline">\(\textcolor{orange}{T}\)</span> is the <font color="orange">temperature</font> in kelvin.</p>
-</div></div><p><span class="math display">\[
+<div class="page-columns page-full"><p><span class="math display">\[
 \textcolor{blue}{p} = n \textcolor{red}{k_B} \textcolor{orange}{T}
-\]</span></p>
+\]</span> </p><div class="no-row-height column-margin column-container"><span class="margin-aside">where <span class="math inline">\(\textcolor{blue}{p}\)</span> is the <font color="blue">pressure</font>, <span class="math inline">\(n\)</span> is the number density (particles per volume) of the gas, <span class="math inline">\(\textcolor{red}{k_B}\)</span> is <font color="red">Boltzmann’s constant</font> (<span class="math inline">\(1.38\times10^{-16}\)</span> erg/K), and <span class="math inline">\(\textcolor{orange}{T}\)</span> is the <font color="orange">temperature</font> in kelvin.</span></div></div>
 <p>In a star like the Sun, the pressure is mostly provided by gas pressure. In hotter stars, <em>photon</em> or <em>radiation pressure</em> is dominant, but in the Sun this is <span class="math inline">\(\sim 10^{-3} p_\text{gas}\)</span>.</p>
 <p>Even in the Sun, though, the gas is not <em>quite</em> a classical ideal gas: quantum mechanics is already relevant. There is an equation we will derive later in these notes for the pressure due to the <em>degeneracy</em> of a gas where the quantum wavefunctions of its constituent particles are nearly overlapping:</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>where <span class="math inline">\(\textcolor{purple}{\hbar}\)</span> is the <font color="purple">quantum of action <span class="math inline">\(h/2\pi\)</span></font> (<span class="math inline">\(1.0546 \times 10^{-27} \text{erg}\cdot\text{s}\)</span>), and <span class="math inline">\(\textcolor{green}{m_e}\)</span> the <font color="green">mass of the electron</font>.</p>
-</div></div><p><span class="math display">\[
+<div class="page-columns page-full"><p><span class="math display">\[
 p_\text{degeneracy} = \frac{\textcolor{purple}{\hbar}}{5\textcolor{green}{m_e}} (\frac{3}{8 \pi})^{2/3} n^{5/3}
-\]</span></p>
-<p>It turns out this is about a quarter of the gas pressure at the core of the Sun!</p>
+\]</span>  It turns out this is about a quarter of the gas pressure at the core of the Sun!</p><div class="no-row-height column-margin column-container"><span class="margin-aside">where <span class="math inline">\(\textcolor{purple}{\hbar}\)</span> is the <font color="purple">quantum of action <span class="math inline">\(h/2\pi\)</span></font> (<span class="math inline">\(1.0546 \times 10^{-27} \text{erg}\cdot\text{s}\)</span>), and <span class="math inline">\(\textcolor{green}{m_e}\)</span> the <font color="green">mass of the electron</font>.</span></div></div>
 <section id="the-equation-of-hydrostatic-equilibrium" class="level2 page-columns page-full" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="the-equation-of-hydrostatic-equilibrium"><span class="header-section-number">1.1</span> The Equation of Hydrostatic Equilibrium</h2>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>i.e.&nbsp;<span class="math inline">\(M_r\)</span> is the total mass integrated out up to a radius <span class="math inline">\(r\)</span>.</p>
-</div></div><p>Consider a thin shell of radius <span class="math inline">\(r\)</span> (and surface area <span class="math inline">\(A = 4\pi r^2\)</span>), thickness <span class="math inline">\(dr\)</span>, and mass density <span class="math inline">\(\rho\)</span>, enclosing a mass <span class="math inline">\(M_r\)</span>.</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p><a href="https://en.wikipedia.org/wiki/Shell_theorem">Newton’s Shell Theorem</a> states that the gravitational attraction of a symmetric shell of matter, and therefore by linearity of a ball of matter, can be treated as if the mass were concentrated at a point at the centre.</p>
-</div></div><p>The mass of this shell is <span class="math inline">\(M_\text{shell} = \rho A dr\)</span>, and from Newton’s law of gravitation the magnitude of the gravitational force of the whole shell inwards is</p>
+<div class="page-columns page-full"><p>Consider a thin shell of radius <span class="math inline">\(r\)</span> (and surface area <span class="math inline">\(A = 4\pi r^2\)</span>), thickness <span class="math inline">\(dr\)</span>, and mass density <span class="math inline">\(\rho\)</span>, enclosing a mass <span class="math inline">\(M_r\)</span>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">i.e.&nbsp;<span class="math inline">\(M_r\)</span> is the total mass integrated out up to a radius <span class="math inline">\(r\)</span>.</span></div></div>
+<div class="page-columns page-full"><p>The mass of this shell is <span class="math inline">\(M_\text{shell} = \rho A dr\)</span>, and from Newton’s law of gravitation the magnitude of the gravitational force of the whole shell inwards is</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><a href="https://en.wikipedia.org/wiki/Shell_theorem">Newton’s Shell Theorem</a> states that the gravitational attraction of a symmetric shell of matter, and therefore by linearity of a ball of matter, can be treated as if the mass were concentrated at a point at the centre.</span></div></div>
 <p><span class="math display">\[
 \frac{- G M_r M_\text{shell}}{r^2}
 \]</span></p>
@@ -313,12 +319,9 @@ F_\text{net} = M_\text{shell} a = P_\text{below} \cdot A - P_\text{above} \cdot 
 M_\text{shell} a = a \rho A dr = - A dP  - \frac{G M_r M_\text{shell}}{r^2}
 \]</span></p>
 <p>and therefore rearranging, in equilibrium (<span class="math inline">\(a = 0\)</span>) we have the <strong>equation of hydrostatic equilibrium</strong>:</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p><em>Tattoo this equation on the back of your eyelids.</em></p>
-</div></div><p><span class="math display">\[
+<div class="page-columns page-full"><p><span id="eq-hydrostatic-equilibrium"><span class="math display">\[
 \frac{dP}{dr} = -\rho \frac{G M_r}{r^2}
-\]</span></p>
+\tag{1.1}\]</span></span> </p><div class="no-row-height column-margin column-container"><span class="margin-aside"><em>Tattoo this equation on the back of your eyelids.</em></span></div></div>
 <!-- Now we explain in relation to the Earth: 
 
 - pressure under the sea
@@ -327,33 +330,26 @@ M_\text{shell} a = a \rho A dr = - A dP  - \frac{G M_r M_\text{shell}}{r^2}
     - illustrate with figure showing 322.5m Q1 tower, Everest, Kármán line
 - plane-parallel solar atmospheric scale height 
 -->
+</section>
+<section id="plane-parallel-approximation" class="level2 page-columns page-full" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="plane-parallel-approximation"><span class="header-section-number">1.2</span> Plane-Parallel Approximation</h2>
 <p>This is actually a very familiar equation that we encounter not just in first-year physics, but in everyday life. Nearly all the mass of the Earth is in its body, and only a bit less than a millionth in its atmosphere. So we can consider a situation where</p>
-<p><span class="math display">\[
+<div class="page-columns page-full"><p><span class="math display">\[
 r = R_{\textcolor{NavyBlue}{\oplus}} + \textcolor{green}{z}
-\]</span></p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>where <span class="math inline">\(\textcolor{green}{z}\)</span> is the <span class="math inline">\(\textcolor{green}{\text{height}}\)</span> in the atmosphere <span class="math inline">\(\llless R_\oplus\)</span>. We often denote astronomical bodies by traditional symbols: <span class="math inline">\(\textcolor{NavyBlue}{\oplus}\)</span> is the astronomical symbol for the <span class="math inline">\(\textcolor{NavyBlue}{\text{Earth}}\)</span>, and <span class="math inline">\(\textcolor{yellow}{\odot}\)</span> the <span class="math inline">\(\textcolor{yellow}{\text{Sun}}\)</span>. There are many other traditional symbols that are now rarely used.</p>
-</div></div><p>We can now write this in familiar terms with the acceleration due to gravity as</p>
+\]</span> </p><div class="no-row-height column-margin column-container"><span class="margin-aside">where <span class="math inline">\(\textcolor{green}{z}\)</span> is the <span class="math inline">\(\textcolor{green}{\text{height}}\)</span> in the atmosphere <span class="math inline">\(\llless R_\oplus\)</span>. We often denote astronomical bodies by traditional symbols: <span class="math inline">\(\textcolor{NavyBlue}{\oplus}\)</span> is the astronomical symbol for the <span class="math inline">\(\textcolor{NavyBlue}{\text{Earth}}\)</span>, and <span class="math inline">\(\textcolor{yellow}{\odot}\)</span> the <span class="math inline">\(\textcolor{yellow}{\text{Sun}}\)</span>. There are many other traditional symbols that are now rarely used.</span></div></div>
+<p>We can now write this in familiar terms with the acceleration due to gravity as</p>
 <p><span class="math display">\[
 \frac{dP}{dh} = -\rho \cdot \underbrace{\frac{G M_r}{r^2}}_{{\equiv g \text{, constant}}}
 \]</span></p>
 <!-- water -->
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>We can rearrange this to solve for the depth of water required to reach a gauge pressure <span class="math inline">\(\Delta P \equiv P-P_0\)</span>: <span class="math display">\[
+<div class="page-columns page-full"><p>If we are dealing with an incompressible liquid like water, then <span class="math inline">\(\rho\)</span> is a constant and we simply have</p><div class="no-row-height column-margin column-container"><span class="margin-aside">We can rearrange this to solve for the depth of water required to reach a gauge pressure <span class="math inline">\(\Delta P \equiv P-P_0\)</span>: <span class="math display">\[
 z = - \frac{\Delta P}{\rho g}
-\]</span></p>
-<p>For <span class="math inline">\(\rho_\text{water} = 1000 \text{kg\,m}^{-3}\)</span>, to get a 1 atmosphere (<span class="math inline">\(=10^6\)</span> Pa) gauge pressure requires 10.34 m of water.</p>
-</div></div><p>If we are dealing with an incompressible liquid like water, then <span class="math inline">\(\rho\)</span> is a constant and we simply have</p>
+\]</span> For <span class="math inline">\(\rho_\text{water} = 1000 \text{kg\,m}^{-3}\)</span>, to get a 1 atmosphere (<span class="math inline">\(=10^6\)</span> Pa) gauge pressure requires 10.34 m of water.</span></div></div>
 <p><span class="math display">\[
 P(z) = P_0 - \rho g z
 \]</span></p>
-<p>Things are different when your density depends on pressure. For an ideal gas, <span class="math inline">\(P = n k_B T\)</span> and <span class="math inline">\(\rho = n \textcolor{OliveGreen}{\langle m \rangle}\)</span> - so we have an <em>equation of state</em> that we can use to solve for the vertical structure of an <span class="math inline">\(\textcolor{orange}{\text{isothermal}}\)</span> atmosphere:</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>where <span class="math inline">\(\textcolor{OliveGreen}{\langle m \rangle}\)</span> is the <span class="math inline">\(\textcolor{OliveGreen}{\text{mean molecular mass}}\)</span>, and <span class="math inline">\(\textcolor{orange}{\text{isothermal}}\)</span> means having the same temperature everywhere, from ἴσος, “same”, and θέρμη, “heat”.</p>
-</div></div><p><span class="math display">\[
+<div class="page-columns page-full"><p>Things are different when your density depends on pressure. For an ideal gas, <span class="math inline">\(P = n k_B T\)</span> and <span class="math inline">\(\rho = n \textcolor{OliveGreen}{\langle m \rangle}\)</span> - so we have an <em>equation of state</em> that we can use to solve for the vertical structure of an <span class="math inline">\(\textcolor{orange}{\text{isothermal}}\)</span> atmosphere:</p><div class="no-row-height column-margin column-container"><span class="margin-aside">where <span class="math inline">\(\textcolor{OliveGreen}{\langle m \rangle}\)</span> is the <span class="math inline">\(\textcolor{OliveGreen}{\text{mean molecular mass}}\)</span>, and <span class="math inline">\(\textcolor{orange}{\text{isothermal}}\)</span> means having the same temperature everywhere, from ἴσος, “same”, and θέρμη, “heat”.</span></div></div>
+<p><span class="math display">\[
 \begin{aligned}
 \frac{d}{dz} (n k_B T) &amp;= - \langle m \rangle g n \\
 \frac{dn}{dz} &amp;= - \frac{\langle m \rangle g}{k_B T} \cdot N \\
@@ -363,19 +359,16 @@ n &amp;= n_0 \exp{- z/\textcolor{cyan}{h}}
 \]</span></p>
 <p>and we call <span class="math inline">\(\textcolor{cyan}{h}\)</span> the <span class="math inline">\(\textcolor{cyan}{\text{scale height}}\)</span> in the atmosphere. Let’s calculate this for some interesting situations!</p>
 <p>First let’s try an isothermal Earth atmosphere:</p>
-<div id="3341b922" class="cell" data-execution_count="3">
+<div id="553712d4" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mol_earth <span class="op">=</span> <span class="fl">28.964</span> <span class="op">*</span> m_p <span class="co"># average molecular weight for earth's atmosphere</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>T_earth <span class="op">=</span> <span class="dv">300</span> <span class="co"># K; room temperature</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>g_earth <span class="op">=</span> <span class="fl">9.8</span> <span class="co"># m/s</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> k_B <span class="op">*</span> T_earth <span class="op">/</span> mol_earth <span class="op">/</span> g_earth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>This scale height of 8.7 km is 1.4<span class="math inline">\(\,\times 10^{-3} R_\oplus\)</span>; the atmosphere really is very thin and can be treated as plane-parallel. This scale height would mean that the air is 96% as dense at the top of the <span class="math inline">\(\textcolor{Maroon}{\text{Q1 Tower}}\)</span>, and 36% as dense at the summit of <span class="math inline">\(\textcolor{gray}{\text{Mt Everest}}\)</span>.</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p><span class="math inline">\(\textcolor{Maroon}{\text{Q1 Tower}}\)</span> on the Gold Coast is the tallest tower in Australia, at <span class="math inline">\(\textcolor{Maroon}{322.5}\)</span> m; <span class="math inline">\(\textcolor{gray}{\text{Mt Everest}}\)</span>, Earth’s tallest mountain, stands <span class="math inline">\(\textcolor{gray}{8849}\)</span> m tall.</p>
-</div></div><p>Now let’s plug in some numbers for the Sun, using Python:</p>
-<div id="a25e232f" class="cell" data-execution_count="5">
+<div class="page-columns page-full"><p>This scale height of 8.7 km is 1.4<span class="math inline">\(\,\times 10^{-3} R_\oplus\)</span>; the atmosphere really is very thin and can be treated as plane-parallel. This scale height would mean that the air is 96% as dense at the top of the <span class="math inline">\(\textcolor{Maroon}{\text{Q1 Tower}}\)</span>, and 36% as dense at the summit of <span class="math inline">\(\textcolor{gray}{\text{Mt Everest}}\)</span>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="math inline">\(\textcolor{Maroon}{\text{Q1 Tower}}\)</span> on the Gold Coast is the tallest tower in Australia, at <span class="math inline">\(\textcolor{Maroon}{322.5}\)</span> m; <span class="math inline">\(\textcolor{gray}{\text{Mt Everest}}\)</span>, Earth’s tallest mountain, stands <span class="math inline">\(\textcolor{gray}{8849}\)</span> m tall.</span></div></div>
+<p>Now let’s plug in some numbers for the Sun, using Python:</p>
+<div id="6c3a8b01" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> m_p <span class="co"># kg</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mean molecular weight for ionized hydrogen = </span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># mean of electron &amp; proton = m_p/2</span></span>
@@ -391,8 +384,33 @@ n &amp;= n_0 \exp{- z/\textcolor{cyan}{h}}
 - discuss the general idea of scaling relations in this course: 
     - we are going to find relations for R, L, etc
  -->
+</section>
+<section id="scaling-relations" class="level2 page-columns page-full" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="scaling-relations"><span class="header-section-number">1.3</span> Scaling Relations</h2>
+<p>Most of the time, it is not possible to calculate properties of realistic stars in closed-form equations, and we will have to use computer models. But what <em>understanding</em> does this buy us? It is often just as important to have a sense of how these properties scale with one another in general terms, even if we might not be able to estimate actual numbers to better than an order of magnitude.</p>
+<p>As a first example, let’s estimate the pressure at the centre of the Sun. Ideally, we would solve for the full stellar structure using some equation of state, and then integrate <span class="math inline">\(\frac{dP}{dr}\)</span> from zero at the surface <span class="math inline">\(r=R_\odot\)</span> all the way to the core. Instead, we’re going to do something very handwavy. Let’s rearrange the <span class="math inline">\(\frac{dP}{dr}\)</span> in <a href="#eq-hydrostatic-equilibrium" class="quarto-xref">Equation&nbsp;<span>1.1</span></a> to instead be the mean gradient <span class="math inline">\(P/R_\odot\)</span>:</p>
+<div class="page-columns page-full"><p><span class="math display">\[
+\begin{aligned}
+\frac{dP}{dr} &amp;= -\rho \frac{GM_r}{r^2} \\
+\frac{P}{R_\odot} &amp;\approx \langle \rho \rangle \frac{GM_\odot}{R_\odot^2}\\
+P &amp;\approx \langle \rho \rangle \frac{GM_\odot}{R_\odot}\\
+&amp;\approx \frac{M_\odot}{4/3 \pi R_\odot^3} \frac{GM_\odot}{R_\odot}\\
+&amp;\approx \frac{GM_\odot^2}{4/3 \pi R_\odot^4}
+&amp;\propto \frac{GM_\odot^2}{R_\odot^4}
+\end{aligned}
+\]</span> </p><div class="no-row-height column-margin column-container"><span class="margin-aside">Remarkably, it can be shown analytically <span class="citation" data-cites="Milne1936">(<a href="references.html#ref-Milne1936" role="doc-biblioref">Milne 1936</a>)</span> that <span class="math inline">\(P &gt; \frac{GM^2}{8\pi R^4}\)</span> for an arbitrary star - so we are not even <em>too</em> far from the exact solution with these mathematical sins. It is often the case that very coarse approximations differ from exact solutions by a factor of order unity; we will therefore often drop these factors and just think about the scaling.</span></div></div>
+<p>which for the Sun, gives <span class="math inline">\(1.1 \times 10^{15}\)</span> Pa pressure, which is within an order of magnitude of the central pressure of <span class="math inline">\(2.3 \times 10^{16}\)</span> Pa in the Standard Solar Model <span class="citation" data-cites="Guenther1992">(<a href="references.html#ref-Guenther1992" role="doc-biblioref">Guenther et al. 1992</a>)</span>.</p>
+<div class="page-columns page-full"><p>We are going to do this kind of approximation a lot in these notes: to estimate how nuclear reactions scale with temperature, how stellar luminosities depend on mass, how stars form and how they die - and we will also tackle real computer models of these processes, so that we build both intuitive understanding and accurate models we can fit to data. Both are essential tools in astronomy. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">“May God us keep From Single vision &amp; Newtons sleep.” — William Blake, Letter to Thomas Butts, 22 November 1802.</span></div></div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Guenther1992" class="csl-entry" role="listitem">
+Guenther, D. B., P. Demarque, Y. -C. Kim, and M. H. Pinsonneault. 1992. <span>“<span>Standard Solar Model</span>”</span> 387 (March): 372. <a href="https://doi.org/10.1086/171090">https://doi.org/10.1086/171090</a>.
+</div>
+<div id="ref-Milne1936" class="csl-entry" role="listitem">
+Milne, E. A. 1936. <span>“<span class="nocase">The Pressure in the interior of a star</span>.”</span> <em>MNRAS</em> 96 (January): 179. <a href="https://doi.org/10.1093/mnras/96.3.179">https://doi.org/10.1093/mnras/96.3.179</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
