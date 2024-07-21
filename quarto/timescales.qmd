@@ -1,10 +1,58 @@
 # Timescales in Stars
+```{python}
+#| echo: false
+from constants import *
+```
 
-We can be fairly sure that we are in hydrostatic equilibrium in a star, because we can calculate the timescale for variations in the pressure in a star to propagate through its body. 
+We can be fairly sure that we are in hydrostatic equilibrium in a star, because we can calculate the timescale for variations in the pressure in a star to propagate through its body - the *dynamical timescale*.
 
-<!-- calculate this as the freefall time -->
+<!-- calculate this as the freefall time 
+- do freefall calculation
+- compare to SHM through the Earth in 42 min
+    - refer to more general solution https://pubs.aip.org/aapt/ajp/article/83/3/231/1057885/The-gravity-tunnel-in-a-non-uniform-Earth
+-->
 
 <!-- then calculate this as the sound-crossing time 
 - recall the speed of sound
 - diameter of star over this
  -->
+
+ ## Thermal Timescale
+
+ <!-- Do a thermal timescale calculation here: 
+ - Kelvin-Helmholtz
+ - thermal diffusion
+-->
+
+## Nuclear Timescale 
+
+<!-- Estimate main sequence lifetime -->
+
+The Kelvin-Helmholtz timescale is very short in comparison to not just what we now know to be the age of the universe, but what was already in Lord Kelvin's day coming to be known as the age of the Earth. We now know that the age of the Sun is set by something else: nuclear fusion of hydrogen into helium.
+
+Assuming the star maintains a total luminosity $L$, we can calculate its nuclear burning lifetime as 
+
+$$
+\begin{aligned}
+\tau_\text{nuc} &= (\text{available nuclear energy})/L\\
+&= \frac{\textcolor{green}{\epsilon} \textcolor{red}{q} M_\* c^2}{L}
+\end{aligned}
+$$
+[$\textcolor{green}{\epsilon}$ is the $\textcolor{green}{\text{efficiency}}$ of fusion, about 0.7%, and $\textcolor{red}{q}$ the $\textcolor{red}{\text{fraction of hydrogen available}}$ for fusion, about 10%.]{.aside}
+
+```{python}
+efficiency = 0.7e-2
+H_avail = 0.1
+t_nuc = H_avail * efficiency * M_sun * c**2 / L_sun 
+```
+
+Inserting these numbers, we find that the nuclear lifetime of the Sun is `{python} md_float(t_nuc/year/1e9,digits=3)` Gyr, which is good to within 10% of its estimated main sequence lifetime of about 10 Gyr.
+
+<!-- Get the actual numbers from the Standard Solar Model. Mesa? -->
+
+## Rotation 
+
+<!-- Do rotational timescales
+- what is typical of stars
+- what are the limits: extremal rotation
+-->

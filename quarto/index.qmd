@@ -4,6 +4,8 @@ We live around a star, the Sun. It is overwhelmingly the most important feature 
 
 More broadly, stars are to astronomy what atoms are to chemistry: innumerable building blocks of a much larger universe of galaxies and cosmology. Each has remarkably simple physics, really parametrized to a very good approximation only by their mass and composition, and at higher order their rotation period; these physics are so simple and reliable that we can accurately model the spectra of whole galaxies in the distant universe just using laboratory physics and our understanding of stars nearby. 
 
+<!-- Say something about the Vogt-Russell "theorem" -->
+
 Analytic reasoning is usually good enough to get rough understanding of the important phenomena in stellar physics, usually as scaling relations - but these are usually only accurate to an order of magnitude or so, and *real* models require computer calculations. In this course we will attempt to do a bit of both.
 
 This is a series of notes, aimed at a second-year undergraduate level, about how stars work: exploring their simplicity and complexity, assuming only a first year undergrad level of classical mechanics, quantum mechanics, and thermal physics, and other physics that we will introduce *ad hoc* as we go along. These notes are based in part on the excellent lectures from which I originally learned as an undergraduate at Berkeley, by Eliot Quataert; on Peter Tuthill and Mike Ireland's courses at Sydney; and on the PHYS2082 course developed at UQ by Holger Baumgardt, and by myself. 

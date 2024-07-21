@@ -11,6 +11,7 @@ book:
     - housekeeping.qmd
     - hydrostatic-equilibrium.qmd
     - timescales.qmd
+    - radiation-transport.qmd
     - references.qmd
   search: true
   repo-url: https://github.com/benjaminpope/howstarswork/

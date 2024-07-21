@@ -1,0 +1,110 @@
+# Heat Transport by Conduction and Radiation
+
+<!-- Intro -->
+
+## Conduction
+<!-- define terms:
+energy density U,
+typical velocity v,
+mean free path l
+ -->
+
+ <!-- derive that flux is proportional to temperature gradient -->
+
+ <!-- define cross-section, opacity, mean free path in an ideal gas -->
+
+ <!-- do mean free path calculation for the atmosphere around us: about a micron -->
+
+ <!-- coulomb cross section; effective radius of the electron -->
+
+ <!-- deflection when electric potential about thermal energy -->
+
+ <!-- electrons are more important than protons for this -->
+
+ ## Radiation
+
+ <!-- show that electron transport is much weaker for conduction than photons -->
+
+ <!-- derive flux law for photons 
+ 
+$$
+\begin{aligned}
+F &= - \frac{4}{3} \frac{c a T^3}{n \sigma} \frac{dT}{dx}
+\end{aligned}
+$$ 
+ 
+  -->
+
+<!-- 
+Thomson scattering derivation
+
+- weak EM waves, Lorentz force is approximately just the electric force
+
+$$
+\vec{a} = -\frac{e}{m_e} \vec{E}
+$$
+
+and use Larmor radiation formula (derive; this is in cgs units as written, so be careful for SI)
+
+$$
+\begin{aligned}
+P & = 2/3 \frac{e^2}{c^3} |a|^2 = \frac{e^2 a_\perp ^2}{6 \pi \epsilon_0 c^2}\\
+&= \frac{e^2 a^2}{6 \pi \epsilon_0 c^3 m_e^2} \\
+&= \frac{e^4 E^2}{6\pi \epsilon_0 c^3 m_e c^4}
+\end{aligned}
+$$
+
+Poynting vector magnitude is $\frac{c E^2}{4\pi}$ so we define $\sigma F =$ Power radiated/scattered/absorbed.
+
+$$
+\begin{aligned}
+\frac{\sigma F c}{4 \pi} &= \frac{e^4}{6 \pi \epsilon_0 c^3 m_e^4}\\
+\therefore \sigma_T &= \frac{2 e^4}{3 \epsilon_0 m_e^2 c^4} \approx 6.65 \times 10^{-25} \text{m}^2 = 0.665 \text{barn}
+\end{aligned}
+$$
+
+This is, remarkably, just $\sigma_T = \pi r_c^2$ where $r_c$ is the classical radius of the electron obtained from its self-energy. (Calculate this)
+
+-->
+
+<!-- Mean free path of radiation
+ 
+l = \frac{\kappa \rho} = \frac{1}{n \sigma_T}
+
+- estimate with python
+ -->
+
+
+## Approximate Scaling of Luminosity with Mass 
+
+<!-- 
+
+in the following, I think the m sigma T bit is not clearly written in my notes - check in Hansen & Kawaler
+$$
+\begin{aligned}
+L &\approx 4 \pi R_*^2 \cdot \frac{a c T^3}{n \sigma_T} \frac{dT}{dr}\\
+&\approx 4 \pi R_*^2 \cdot \frac{a c T^3}{n \sigma_T} \frac{T}{R}\\
+&= \frac{16 \pi R^4 T^4 (\mu_e m_p) a c}{m \sigma_T} 
+\end{aligned}
+$$
+
+Using the Virial Theorem we have an expression for RT: (how do we get the numerical factor of 3 here?)
+
+$$
+k_B T = \frac{GM \mu m_p}{3 R}
+$$
+
+So we substitute this into the above equation and we have (make this clearer)
+$$
+\begin{aligned}
+L \approx &\frac{a (\mu m_p)^4 (\mu_e m_p) c G^4}{\sigma_T \kappa^4} \cdot M^3\\
+&\propto 10^{35} (\frac{M}{M_\odot})^3 \text{erg/s}
+\end{aligned}
+$$
+
+NB $L_\odot = 4\times10^{33} \text{erg/s}$ so we do not get the right prefactor - but we do get approximately the right scaling.
+
+Remarkably, the luminosity is independent of any detailed knowledge of fusion! We only needed to know about hydrostatic equilibrium and radiative diffusion: the star has to adjust its properties internally to fit this mass-luminosity relation, as this determines how much energy photons can carry out. Eddington derived this all in 1926 (citation), pre-quantum!
+
+The observed correlation for real stars is $L \propto M^{3.5}$. (more detail here)
+ -->

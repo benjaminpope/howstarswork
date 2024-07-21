@@ -16,14 +16,15 @@ The fundamental physics of stars is determined by a handful of principles:
 
 Let's talk about hydrostatic equilibrium first.
 
-An ordinary star like the Sun, throughout its whole body, is to a very good approximation an *ideal gas*, and is fully ionized except in its outermost layer. This means that the gas pressure satisfies the equation of state
+<!-- Consider moving gas pressure to the end? -->
 
+An ordinary star like the Sun, throughout its whole body, is to a very good approximation an *ideal gas*, and is fully ionized except in its outermost layer. This means that the gas pressure satisfies the equation of state
 
 $$
 \textcolor{blue}{p} = n \textcolor{red}{k_B} \textcolor{orange}{T}
 $$
 [where $\textcolor{blue}{p}$ is the <font color='blue'>pressure</font>, $n$ is the number density (particles per volume) of the gas, $\textcolor{red}{k_B}$ is <font color='red'>Boltzmann's constant</font> ($1.38\times10^{-16}$ erg/K), and $\textcolor{orange}{T}$ is the <font color='orange'>temperature</font> in kelvin.]{.aside}
-
+<!-- https://www.overleaf.com/learn/latex/Using_colors_in_LaTeX colour link -->
 In a star like the Sun, the pressure is mostly provided by gas pressure. In hotter stars, *photon* or *radiation pressure* is dominant, but in the Sun this is $\sim 10^{-3} p_\text{gas}$. 
 
 Even in the Sun, though, the gas is not *quite* a classical ideal gas: quantum mechanics is already relevant. There is an equation we will derive later in these notes for the pressure due to the *degeneracy* of a gas where the quantum wavefunctions of its constituent particles are nearly overlapping: 
@@ -32,6 +33,7 @@ $$
 p_\text{degeneracy} = \frac{\textcolor{purple}{\hbar}}{5\textcolor{green}{m_e}} (\frac{3}{8 \pi})^{2/3} n^{5/3}
 $$
 [where $\textcolor{purple}{\hbar}$ is the <font color='purple'>quantum of action $h/2\pi$</font> ($1.0546 \times 10^{-27} \text{erg}\cdot\text{s}$), and $\textcolor{green}{m_e}$ the <font color='green'>mass of the electron</font>.]{.aside}
+
 It turns out this is about a quarter of the gas pressure at the core of the Sun! 
 
 ## The Equation of Hydrostatic Equilibrium
@@ -110,6 +112,30 @@ $$
 
 Things are different when your density depends on pressure. For an ideal gas, $P = n k_B T$ and $\rho = n \textcolor{OliveGreen}{\langle m \rangle}$[where $\textcolor{OliveGreen}{\langle m \rangle}$ is the $\textcolor{OliveGreen}{\text{mean molecular mass}}$, and $\textcolor{orange}{\text{isothermal}}$ means having the same temperature everywhere, from ἴσος, "same", and θέρμη, "heat".
 ]{.aside} - so we have an *equation of state* that we can use to solve for the vertical structure of an $\textcolor{orange}{\text{isothermal}}$ atmosphere:
+
+<!-- mean molecular weight needs its own section 
+Consider a gas of many species such that each has mass fraction $X_i$, atomic number $A_i$, and total mass density $\rho$: then
+
+$$
+n_i = \rho \frac{X_i}{A_i m_p}
+$$
+
+so 
+
+$$
+\begin{aligned}
+P &= \sum_{i} n_i k_B T \\
+&= \frac{\rho k_B T}{m_p} \sum_i \frac{X_i}{A_i}\\
+&= \frac{\rho k_B T}{m_p \mu_\text{ions}} \rightarrow \frac{1}{\mu_\text{ions}} = \sum_i \frac{X_i}{A_i}
+\end{aligned}
+$$
+
+So for a fully ionized plasma, we get $n_e = \sum_i Z_i n_i$, and $1/\mu_e = \sum_i Z_i X_i / A_i$, and we have that mean molecular masses add reciprocally like springs:
+
+$$
+\frac{1}{\mu} = \frac{1}{\mu_{e^-}} + \frac{1}{\mu_\text{ions}}
+$$
+-->
 
 $$ 
 \begin{aligned}
